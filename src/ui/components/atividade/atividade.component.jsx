@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./index.css";
 
 const NIVEL_ATIVIDADE = {
   SEDENTARIO: 1.2,

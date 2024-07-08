@@ -1,0 +1,39 @@
+.box-atividade {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.box-atividade div {
+  width: 150px;
+  background-image: linear-gradient(104deg, #fafafa, #eee);
+  color: #37474f;
+  height: 50px;
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box-atividade span {
+  margin-left: 10px;
+}
+
+.atividade-ativa{
+  background-image: linear-gradient(117deg, #03a9f4, #0288d1) !important;
+}
+
+.atividade-ativa span {
+  color: #fff !important;
+}
+
+.descricao-atividade {
+  display: flex;
+}
+
+.descricao-atividade p {
+  width: 200px;
+  margin: 0 10px;
+}

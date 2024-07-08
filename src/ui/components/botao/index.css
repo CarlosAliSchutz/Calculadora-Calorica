@@ -1,0 +1,23 @@
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-calculo {
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 24px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 12px 30px;
+  background-image: linear-gradient(117deg, #03a9f4, #0288d1);
+  font-size: 24px;
+}
+
+.button-calculo:active, .button-calculo:hover {
+  background-image: linear-gradient(117deg, #0288d1, #03a9);
+}
