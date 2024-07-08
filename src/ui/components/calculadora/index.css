@@ -20,7 +20,7 @@
 
 .box-calculadora > div {
   margin-left: 50px;
-  border: 1px solid #37474f;
+  border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 15px;
   padding: 10px 20px;
 }
