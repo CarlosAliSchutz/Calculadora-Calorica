@@ -15,7 +15,6 @@ export function SelecaoNivelAtividade({ onNivelAtividade }) {
   );
 
   useEffect(() => {
-    onNivelAtividade(nivelAtividade);
     const atividadeBoxes = document.querySelectorAll(".box-atividade > div");
 
     atividadeBoxes.forEach((box) => {
@@ -25,7 +24,8 @@ export function SelecaoNivelAtividade({ onNivelAtividade }) {
         box.classList.remove("atividade-ativa");
       }
     });
-  }, [nivelAtividade]);
+    onNivelAtividade(nivelAtividade);
+  }, [nivelAtividade, onNivelAtividade]);
 
   return (
     <div>
