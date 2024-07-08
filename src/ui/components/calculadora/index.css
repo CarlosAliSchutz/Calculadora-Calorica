@@ -7,10 +7,22 @@
   justify-content: center;
 }
 
+.container-calculadora h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .box-calculadora {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;
+}
+
+.box-calculadora > div {
+  margin-left: 50px;
+  border: 1px solid #37474f;
+  border-radius: 15px;
+  padding: 10px 20px;
 }
 
 .input-info {
@@ -23,40 +35,6 @@
   margin-right: 10px;
   text-align: center;
   outline: none;
-}
-
-/* Genero */
-.container-genero {
-  display: flex;
-  justify-content: center;
-}
-
-.genero-box {
-  background-image: linear-gradient(104deg, #fafafa, #eee);
-  color: #37474f;
-  border-radius: 10px;
-  width: 200px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  cursor: pointer;
-}
-
-.ativo {
-  border: none;
-  background-image: linear-gradient(117deg, #03a9f4, #0288d1);
-  color: #fff;
-}
-
-/* Idade */
-
-.container-idade div {
-  display: flex;
-  height: 70%;
-  align-items: center;
-  margin: 0 50px;
 }
 
 /* Altura/Peso */

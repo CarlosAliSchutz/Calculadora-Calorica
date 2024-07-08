@@ -1,0 +1,6 @@
+.container-idade div {
+  display: flex;
+  height: 70%;
+  align-items: center;
+  margin: 0 50px;
+}
