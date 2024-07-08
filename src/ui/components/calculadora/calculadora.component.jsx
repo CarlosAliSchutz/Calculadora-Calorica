@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import "./index.css";
 
 const GENERO = {
   HOMEM: "HOMEM",
@@ -55,69 +56,122 @@ export function Calculadora() {
     setResultado(Math.floor(necessidadeCalorica));
   }
 
+  useEffect(() => {
+    const homemBox = document.querySelector(".homem-box");
+    const mulherBox = document.querySelector(".mulher-box");
+
+    if (genero === GENERO.HOMEM) {
+      homemBox.classList.add("ativo");
+      mulherBox.classList.remove("ativo");
+    } else if (genero === GENERO.MULHER) {
+      mulherBox.classList.add("ativo");
+      homemBox.classList.remove("ativo");
+    }
+  }, [genero]);
+
+  useEffect(() => {
+    console.log(nivelAtividade);
+  }, [nivelAtividade]);
+
+  useEffect(() => {
+    const atividadeBoxes = document.querySelectorAll(".box-atividade > div");
+
+    atividadeBoxes.forEach((box) => {
+      if (box.querySelector(`input[value="${nivelAtividade}"]`)) {
+        box.classList.add("atividade-ativa");
+      } else {
+        box.classList.remove("atividade-ativa");
+      }
+    });
+  }, [nivelAtividade]);
+
   return (
     <>
-      <section>
-        <div>
-          <h2>Qual é o seu gênero?</h2>
-          <div onClick={() => setGenero(GENERO.HOMEM)}>Homem</div>
-          <div onClick={() => setGenero(GENERO.MULHER)}>Mulher</div>
-        </div>
-
-        <div>
-          <h2>Qual é a sua idade?</h2>
+      <section className="container-calculadora">
+        <div className="box-calculadora">
           <div>
-            <input
-              type="text"
-              name="idade"
-              id="idade"
-              onChange={(e) => setIdade(e.target.value)}
-              placeholder="Digite sua idade"
-            />
-            <span>anos</span>
+            <h2>Qual é o seu gênero?</h2>
+            <div className="container-genero">
+              <div
+                className="genero-box homem-box"
+                onClick={() => setGenero(GENERO.HOMEM)}
+              >
+                Homem
+              </div>
+              <div
+                className="genero-box mulher-box"
+                onClick={() => setGenero(GENERO.MULHER)}
+              >
+                Mulher
+              </div>
+            </div>
+          </div>
+
+          <div className="container-idade">
+            <h2>Qual é a sua idade?</h2>
+            <div>
+              <input
+                type="text"
+                name="idade"
+                className="input-info"
+                id="idade"
+                onChange={(e) => setIdade(e.target.value)}
+                placeholder="21"
+              />
+              <span>anos</span>
+            </div>
           </div>
         </div>
 
-        <div>
-          <h2>Qual é a sua altura?</h2>
-          <input
-            type="text"
-            name="altura"
-            id="altura"
-            placeholder="Digite sua altura"
-            onChange={(e) => setAltura(e.target.value)}
-          />
-          <span>cm</span>
-        </div>
+        <div className="box-calculadora container-altura-peso">
+          <div className="container-altura">
+            <h2>Qual é a sua altura?</h2>
 
-        <div>
-          <h2>Qual é o seu peso?</h2>
-          <input
-            type="text"
-            name="peso"
-            id="peso"
-            placeholder="Digite seu peso"
-            onChange={(e) => setPeso(e.target.value)}
-          />
-          <span>kg</span>
+            <div>
+              <input
+                type="text"
+                name="altura"
+                className="input-info"
+                id="altura"
+                placeholder="170"
+                onChange={(e) => setAltura(e.target.value)}
+              />
+              <span>cm</span>
+            </div>
+          </div>
+
+          <div className="container-peso">
+            <h2>Qual é o seu peso?</h2>
+            <div>
+              <input
+                type="text"
+                name="peso"
+                className="input-info"
+                id="peso"
+                placeholder="60"
+                onChange={(e) => setPeso(e.target.value)}
+              />
+              <span>kg</span>
+            </div>
+          </div>
         </div>
 
         <div>
           <h2>Qual é o seu nível de atividade diária?</h2>
 
-          <div>
-            <div>
+          <div className="box-atividade">
+            <div onClick={() => setNivelAtividade(NIVEL_ATIVIDADE.SEDENTARIO)}>
               <input
                 type="radio"
                 name="atividade"
                 id="atividade-sedentario"
                 value={NIVEL_ATIVIDADE.SEDENTARIO}
-                checked={nivelAtividade === NIVEL_ATIVIDADE.SEDENTARIO}
                 onChange={(e) => setNivelAtividade(e.target.value)}
+                checked={nivelAtividade === NIVEL_ATIVIDADE.SEDENTARIO}
               />
               <span>Sedentário</span>
             </div>
-            <div>
+            <div onClick={() => setNivelAtividade(NIVEL_ATIVIDADE.POUCO_ATIVA)}>
               <input
                 type="radio"
                 name="atividade"
@@ -128,7 +182,7 @@ export function Calculadora() {
               />
               <span>Pouco Ativa</span>
             </div>
-            <div>
+            <div onClick={() => setNivelAtividade(NIVEL_ATIVIDADE.MODERADA)}>
               <input
                 type="radio"
                 name="atividade"
@@ -139,7 +193,7 @@ export function Calculadora() {
               />
               <span>Moderada</span>
             </div>
-            <div>
+            <div onClick={() => setNivelAtividade(NIVEL_ATIVIDADE.ELEVADA)}>
               <input
                 type="radio"
                 name="atividade"
@@ -150,7 +204,7 @@ export function Calculadora() {
               />
               <span>Elevada</span>
             </div>
-            <div>
+            <div onClick={() => setNivelAtividade(NIVEL_ATIVIDADE.INTENSA)}>
               <input
                 type="radio"
                 name="atividade"
@@ -162,15 +216,28 @@ export function Calculadora() {
               <span> Intensa</span>
             </div>
           </div>
+          <div className="descricao-atividade">
+            <p>Sentado na maior parte do tempo (ex.: trabalho em escritório)</p>
+            <p>Em pé na maior parte do tempo (ex.: professor)</p>
+            <p>Andando na maior parte do tempo (ex.: vendedor)</p>
+            <p>Trabalho que exige muita atividade (ex.: pedreiro)</p>
+            <p>
+              Participa de esportes competitivos ou treinos de alta intensidade.
+            </p>
+          </div>
         </div>
 
-        <button
-          onClick={() =>
-            calcularNecessidade(genero, idade, altura, peso, nivelAtividade)
-          }
-        >
-          Calcular
-        </button>
+        <div className="container-button">
+          <button
+            className="button-calculo"
+            onClick={() =>
+              calcularNecessidade(genero, idade, altura, peso, nivelAtividade)
+            }
+          >
+            Calcular
+          </button>
+        </div>
+
         {resultado !== null && (
           <>
             <hr />

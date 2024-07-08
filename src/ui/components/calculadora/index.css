@@ -1,0 +1,142 @@
+/* Calculadora Geral */
+.container-calculadora {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box-calculadora {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+
+.input-info {
+  width: 66px;
+  font-size: 34px;
+  border: 0;
+  padding: 12px 0;
+  font-weight: 700;
+  border-bottom: 2px solid #37474f;
+  margin-right: 10px;
+  text-align: center;
+  outline: none;
+}
+
+/* Genero */
+.container-genero {
+  display: flex;
+  justify-content: center;
+}
+
+.genero-box {
+  background-image: linear-gradient(104deg, #fafafa, #eee);
+  color: #37474f;
+  border-radius: 10px;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.ativo {
+  border: none;
+  background-image: linear-gradient(117deg, #03a9f4, #0288d1);
+  color: #fff;
+}
+
+/* Idade */
+
+.container-idade div {
+  display: flex;
+  height: 70%;
+  align-items: center;
+  margin: 0 50px;
+}
+
+/* Altura/Peso */
+
+.container-altura-peso > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.container-altura div, .container-peso div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 50px;
+}
+
+/* Atividade */
+
+.box-atividade {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.box-atividade div {
+  width: 150px;
+  background-image: linear-gradient(104deg, #fafafa, #eee);
+  color: #37474f;
+  height: 50px;
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box-atividade span {
+  margin-left: 10px;
+}
+
+.atividade-ativa{
+  background-image: linear-gradient(117deg, #03a9f4, #0288d1) !important;
+}
+
+.atividade-ativa span {
+  color: #fff !important;
+}
+
+.descricao-atividade {
+  display: flex;
+}
+
+.descricao-atividade p {
+  width: 200px;
+  margin: 0 10px;
+}
+
+/* Botão */
+
+.container-button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-calculo {
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 24px;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 12px 30px;
+  background-image: linear-gradient(117deg, #03a9f4, #0288d1);
+  font-size: 24px;
+}
+
+.button-calculo:active, .button-calculo:hover {
+  background-image: linear-gradient(117deg, #0288d1, #03a9);
+}
