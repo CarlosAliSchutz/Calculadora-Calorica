@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Calculadora-Calorica/static/css/main.37aa018b.css",
+    "main.js": "/Calculadora-Calorica/static/js/main.7898f536.js",
+    "index.html": "/Calculadora-Calorica/index.html",
+    "main.37aa018b.css.map": "/Calculadora-Calorica/static/css/main.37aa018b.css.map",
+    "main.7898f536.js.map": "/Calculadora-Calorica/static/js/main.7898f536.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37aa018b.css",
+    "static/js/main.7898f536.js"
+  ]
+}
